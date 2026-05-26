@@ -8,6 +8,11 @@ td.gridjs {
     box-sizing: content-box;
   }
 
+  &-td-editing {
+    border-color: $blue1;
+    box-shadow: inset 0 0 0 1px $blue1;
+  }
+
   &-td:first-child {
     border-left: none;
   }
@@ -19,4 +24,23 @@ td.gridjs {
   &-message {
     text-align: center;
   }
+}
+
+input.gridjs-td-editor-input {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: inherit;
+  display: block;
+  font: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  text-align: inherit;
+  width: 100%;
 }

@@ -108,6 +108,7 @@
     "build:grid": "microbundle build --raw --external none --tsconfig tsconfig.release.json",
     "build:i18n": "microbundle build --raw --cwd l10n --tsconfig l10n/tsconfig.release.json",
     "build:watch": "npm run build:grid -- -w",
+    "prebuild:plugins": "npm ci --prefix plugins/selection",
     "build:plugins": "microbundle build --raw --cwd plugins/selection --tsconfig plugins/selection/tsconfig.release.json",
     "postbuild": "node build/node-13-exports.js",
     "prebuild:themes": "sass src/theme/mermaid/index.scss dist/theme/mermaid.css",
