@@ -38,4 +38,31 @@ describe('TD component', () => {
     expect(cells.length).toEqual(1);
     expect(onClick).toHaveBeenCalledTimes(1);
   });
+
+  it('should not edit on double click by default', () => {
+    const cell = new Cell('boo');
+    const td = mount(
+      <ConfigContext.Provider value={config}>
+        <TD cell={cell} />
+      </ConfigContext.Provider>,
+    );
+
+    td.find('td').simulate('dblclick');
+
+    expect(td.find('input.gridjs-td-editor-input')).toHaveLength(0);
+  });
+
+  it('should edit on double click when editable is enabled', () => {
+    config.editable = true;
+    const cell = new Cell('boo');
+    const td = mount(
+      <ConfigContext.Provider value={config}>
+        <TD cell={cell} />
+      </ConfigContext.Provider>,
+    );
+
+    td.find('td').simulate('dblclick');
+
+    expect(td.find('input.gridjs-td-editor-input')).toHaveLength(1);
+  });
 });

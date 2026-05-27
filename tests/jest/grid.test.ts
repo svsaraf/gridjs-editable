@@ -56,11 +56,13 @@ describe('Grid class', () => {
   it('should set the config correctly', () => {
     const config = {
       data: [[1, 2, 3]],
+      editable: true,
     };
 
     const grid = new Grid(config).render(document.createElement('div'));
 
     expect(grid.config.data).toStrictEqual(config.data);
+    expect(grid.config.editable).toBe(true);
   });
 
   it('should update the config correctly', () => {

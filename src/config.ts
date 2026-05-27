@@ -52,6 +52,8 @@ export interface Config {
   fixedHeader: boolean;
   /** Resizable columns? */
   resizable: boolean;
+  /** Editable cells? */
+  editable: boolean;
   columns: OneDArray<TColumn | string | ComponentChild>;
   search: SearchConfig | boolean;
   language: Language;
@@ -132,6 +134,7 @@ export class Config {
       height: 'auto',
       processingThrottleMs: 100,
       autoWidth: true,
+      editable: false,
       style: {},
       className: {},
     };

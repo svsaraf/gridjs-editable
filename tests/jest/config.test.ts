@@ -15,6 +15,7 @@ describe('Config', () => {
     const config = new Config();
     config.assign({});
     expect(config.width).toEqual('100%');
+    expect(config.editable).toBe(false);
   });
 
   it('assign should set the correct default', () => {

@@ -72,7 +72,11 @@ export function TD(
   };
 
   const isEditable = (): boolean => {
-    return !props.messageCell && !(props.column && props.column.plugin);
+    return (
+      config.editable &&
+      !props.messageCell &&
+      !(props.column && props.column.plugin)
+    );
   };
 
   const stringifyCellValue = (value: typeof props.cell.data): string => {
